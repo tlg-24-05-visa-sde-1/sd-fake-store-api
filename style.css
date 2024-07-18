@@ -16,6 +16,8 @@
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: stretch;
+  margin-left: 80px;
+  margin-top: 80px;
 }
 
 .card {
