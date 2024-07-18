@@ -21,6 +21,7 @@
 }
 
 .card {
+  text-align: center;
   width: 14rem;
   border: 2px solid orchid;
   padding: 5px 5px;
