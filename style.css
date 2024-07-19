@@ -10,6 +10,11 @@
   margin: 20px;
 }
 
+.btn-categories > button {
+  background-color: navy;
+  color: #ffffff;
+}
+
 .product-container {
   display: flex;
   flex-direction: row;
