@@ -1,16 +1,19 @@
 //imports
-import { createCard } from "./js-modules/card.js";
+import { fetchData } from "./js-modules/fetch-data.js";
+import { createCard } from "./js-modules/create-card.js";
+import { displayCategory } from "./js-modules/display-category.js";
+import { clearContainer } from "./js-modules/clear-container.js";
 
-// fetch all products
-fetch("https://fakestoreapi.com/products")
-  .then((response) => response.json())
-  .then((data) => {
-    console.log(data);
+// display all products
+fetchData("products", createCard);
 
-    for (let i = 0; i < data.length; i++) {
-      // make each product into a card
-      let productCard = createCard(data[i]);
-      // append each card to the div container
-      document.querySelector(".product-container").appendChild(productCard);
-    }
-  });
+// add event listener to category buttons
+document.querySelector(".btn-categories").addEventListener("click", (event) => {
+  // if a button is clicked
+  if (event.target.classList.contains("btn")) {
+    // collect category
+    let category = event.target.textContent.toLowerCase();
+    // display only electronics products
+    displayCategory(category, clearContainer, fetchData, createCard);
+  }
+});
